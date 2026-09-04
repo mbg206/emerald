@@ -5,4 +5,6 @@ emerald/error_log.txt
 **/__pycache__
 
 bob.toml
-bobdata
+bob_data
+bob_build
+bob.exe
