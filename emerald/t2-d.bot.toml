@@ -1,0 +1,16 @@
+[settings]
+agent_id = "mbg206/emerald-t2-d"
+name = "Emerald T2-D"
+loadout_file = "loadouts/base_loadout.toml"
+logo_file = "logos/logo_2.png"
+run_command = "..\\venv\\Scripts\\python src\\bot.py t2-d"
+run_command_linux = "../venv/bin/python src/bot.py t2-d"
+hivemind = true
+
+[details]
+description = "Emerald test 2"
+fun_fact = "2v2 test"
+source_link = ""
+developer = "mbg206 / l1ghtn1ng__"
+language = "rlgym-v2"
+tags = ["teamplay"]

@@ -1,0 +1,16 @@
+[settings]
+agent_id = "mbg206/emerald-t1"
+name = "Emerald T1"
+loadout_file = "loadouts/t1_loadout.toml"
+logo_file = "logos/logo_1.png"
+run_command = "..\\venv\\Scripts\\python src\\bot.py t1"
+run_command_linux = "../venv/bin/python src/bot.py t1"
+hivemind = true
+
+[details]
+description = "Emerald test 1"
+fun_fact = "so it begins"
+source_link = ""
+developer = "mbg206 / l1ghtn1ng__"
+language = "rlgym-v2"
+tags = ["1v1"]
