@@ -190,7 +190,6 @@ VERSIONS = {
         action_parser=EmeraldLookupAction(include_wall_act=True),
         obs_builder=EmeraldObs(max_size=3,
                                mirror=True,
-                               pads_inf_boost=True,
                                inf_boost_indicator=True,
                                use_v4_data=False,
                                teammate_indicator=True,
