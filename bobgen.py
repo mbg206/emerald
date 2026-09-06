@@ -3,7 +3,7 @@ from os import mkdir, path, listdir, remove
 
 from emerald.src.vers import VERSIONS
 
-DATA_FOLDER = "bobdata"
+DATA_FOLDER = "bob_data"
 
 
 if path.isdir(DATA_FOLDER):
@@ -12,17 +12,16 @@ if path.isdir(DATA_FOLDER):
 else:
     mkdir(DATA_FOLDER)
 
+with open("botpack_bots", 'r', encoding="utf-8") as needed_bots:
+    needed_files = needed_bots.read().split("\n")
 
 with open("bob.toml", 'w', encoding="utf-8") as bob:
     first = True
-    for file in listdir("emerald/"):
-        if not file.endswith(".bot.toml"):
-            continue
-        filepath = f"emerald/{file}"
+    for file in needed_files:
+        filepath = f"emerald/{file}.bot.toml"
 
-        id = file[0:-9]
-        specfile = f"{id}.spec"
-        runfile = f"{id}.py"
+        specfile = f"{file}.spec"
+        runfile = f"{file}.py"
 
         if first:
             first = False
@@ -43,7 +42,6 @@ with open("bob.toml", 'w', encoding="utf-8") as bob:
         )
 
         ver = (botdata['settings']['run_command'].split(" "))[-1]
-        print(ver)
         policy_file = VERSIONS[ver]().policy_path
 
         with open(f"{DATA_FOLDER}/{runfile}", 'w', encoding="utf-8") as run:
@@ -77,7 +75,7 @@ with open("bob.toml", 'w', encoding="utf-8") as bob:
                     "a.binaries," +
                     "a.datas," +
                     "[]," +
-                    f"name='{id}'," +
+                    f"name='{file}'," +
                     "debug=False," +
                     "bootloader_ignore_signals=False," +
                     "strip=False," +
